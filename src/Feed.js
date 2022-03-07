@@ -11,16 +11,32 @@ import Post from './Post';
 
 function Feed() {
   const [input, setInput] = useState('');
-  const [post, setPost] = useState('');
+  const [posts, setPosts] = useState([]);
 
-
+  /*useEffect(() => {
+    db.collection("posts").onSnapshot((snapshot) =>
+      setPosts(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+    );
+  }, []);*/
 
   const sendPost = (e) => {
     e.preventDefault();
-    setPost();
+    setPosts();
 
-
+   /* db.collection("posts").add({
+      name: "David Adeola",
+      description: "This is a test",
+      message: input,
+      photoUrl: "",
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });*/
   };
+
 
   return (
     <div className="feed">
@@ -45,7 +61,7 @@ function Feed() {
       </div> 
 
       {/* Posts */}
-      {post.map(({ id, data: { name, description, message, photoUrl} }) => (
+      {posts.map(({ id, data: { name, description, message, photoUrl} }) => (
         <Post 
         key={id}
         name={name}

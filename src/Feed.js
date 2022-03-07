@@ -11,11 +11,13 @@ import Post from './Post';
 
 function Feed() {
   const [input, setInput] = useState('');
+  const [post, setPost] = useState('');
 
 
 
   const sendPost = (e) => {
     e.preventDefault();
+    setPost();
 
 
   };
@@ -43,7 +45,7 @@ function Feed() {
       </div> 
 
       {/* Posts */}
-      {posts.map(({ id, data: { name, description, message, photoUrl} }) => (
+      {post.map(({ id, data: { name, description, message, photoUrl} }) => (
         <Post 
         key={id}
         name={name}

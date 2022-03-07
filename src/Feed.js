@@ -7,34 +7,17 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import DescriptionIcon from '@material-ui/icons/Description';
 import Post from './Post';
-//import { db } from './firebase';
-//import firebase from 'firebase';
+
 
 function Feed() {
   const [input, setInput] = useState('');
-  const [posts, setPosts] = useState([]);
 
-  /*useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot) =>
-      setPosts(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      )
-    );
-  }, []);*/
+
 
   const sendPost = (e) => {
     e.preventDefault();
 
-   /* db.collection("posts").add({
-      name: "David Adeola",
-      description: "This is a test",
-      message: input,
-      photoUrl: "",
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });*/
+
   };
 
   return (
